@@ -276,7 +276,7 @@ const registerUser = asyncHandler(async (req, res) => {
                 throw new ApiError(400,"Avatar file is missing")
             }
 
-            const avatar=await uploadCloudinary(avatarLocalPath)
+            const avatar=await uploadOnCloudinary(avatarLocalPath)
 
             if(!avatar.url){
                 throw new ApiError(400,"Error while uploading on avatar")
@@ -306,7 +306,7 @@ const registerUser = asyncHandler(async (req, res) => {
                 throw new ApiError(400,"Cover image file is missing")
             }
 
-            const coverImage=await uploadCloudinary(coverImageLocalPath)
+            const coverImage=await uploadOnCloudinary(coverImageLocalPath)
 
             if(!coverImage.url){
                 throw new ApiError(400,"Error while uploading on avatar")
